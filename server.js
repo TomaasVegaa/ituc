@@ -36,6 +36,8 @@ async function serveStatic(pathname, res) {
   let targetRel = pathname;
   if (targetRel === '/') {
     targetRel = '/index.html';
+  } else if (targetRel === '/catalogo' || targetRel === '/catalogo/') {
+    targetRel = '/catalogo.html';
   } else if (targetRel === '/admin' || targetRel === '/admin/') {
     targetRel = '/admin.html';
   }

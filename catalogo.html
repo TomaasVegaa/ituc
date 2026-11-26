@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo — iTuc Cel | Tucumán &amp; Salta</title>
+  <meta name="description" content="Catálogo actualizado de iPhone y accesorios Apple en iTuc Cel Tucumán y Salta.">
+  <meta name="theme-color" content="#0F1A24">
+  <link rel="icon" type="image/png" href="assets/img/logo-ituc.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Ir al catálogo</a>
+
+  <header class="site-header is-scrolled">
+    <div class="container header-inner">
+      <a class="brand-link" href="/" data-site-home aria-label="iTuc Cel Inicio">
+        <img class="brand-logo" src="assets/img/logo-ituc.png" alt="Logo de iTuc Cel" width="40" height="40">
+        <span>iTuc Cel</span>
+      </a>
+
+      <div class="header-actions">
+        <a class="btn btn-secondary btn-sm header-back-btn" href="/" data-site-home>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5m6 6-6-6 6-6"/>
+          </svg>
+          <span>Volver</span>
+        </a>
+
+        <button
+          type="button"
+          class="btn btn-primary btn-sm header-wa-btn"
+          data-open-branch-picker
+          data-wa-context="Consulta de catálogo"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section catalog-page-section">
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-header">
+            <p class="eyebrow">CATÁLOGO ITUC CEL</p>
+            <h1 id="catalog-page-title">Celulares y accesorios.</h1>
+            <p class="section-subtitle" id="catalog-page-sub">Consultá stock y cotización directa por sucursal.</p>
+          </div>
+
+          <div class="catalog-filters" role="group" aria-label="Filtrar catálogo por categoría">
+            <button type="button" class="filter-pill is-active" data-catalog-filter="all" aria-pressed="true">Todos</button>
+            <button type="button" class="filter-pill" data-catalog-filter="celulares" aria-pressed="false">Celulares</button>
+            <button type="button" class="filter-pill" data-catalog-filter="accesorios" aria-pressed="false">Accesorios</button>
+          </div>
+        </div>
+
+        <div class="catalog-grid" id="catalog-grid" aria-live="polite">
+          <div class="card catalog-skeleton" aria-hidden="true"></div>
+          <div class="card catalog-skeleton" aria-hidden="true"></div>
+          <div class="card catalog-skeleton" aria-hidden="true"></div>
+        </div>
+
+        <div class="card tradein-banner">
+          <div class="tradein-info">
+            <div class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m17 2 4 4-4 4"/>
+                <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+                <path d="m7 22-4-4 4-4"/>
+                <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+              </svg>
+            </div>
+            <div>
+              <h2>Plan Canje</h2>
+              <p>Entregá tu equipo actual en parte de pago.</p>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-open-branch-picker
+            data-wa-context="Cotización por Plan Canje"
+          >
+            <span>Cotizar mi equipo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo-ituc.png" alt="iTuc Cel" width="28" height="28">
+        <span>iTuc Cel · Tucumán &amp; Salta</span>
+      </div>
+      <nav class="footer-links" aria-label="Enlaces del pie">
+        <a href="/" data-site-home>Inicio</a>
+        <a href="/admin" data-admin-link>Admin</a>
+      </nav>
+      <span>&copy; 2026 iTuc Cel</span>
+    </div>
+  </footer>
+
+  <button
+    type="button"
+    class="wa-fab"
+    data-open-branch-picker
+    data-wa-context="Consulta de catálogo"
+    aria-label="Elegir sucursal para WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+  </button>
+
+  <div class="modal-backdrop" id="branch-modal" hidden>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="branch-modal-title">
+      <div class="modal-head">
+        <h3 id="branch-modal-title">Elegí la sucursal</h3>
+        <button type="button" class="modal-close" id="branch-modal-close" aria-label="Cerrar selector">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <p class="modal-sub" id="branch-modal-context">Abrimos WhatsApp directo con tu consulta.</p>
+
+      <div class="modal-branches">
+        <a class="modal-branch-link" id="modal-wa-tucuman" href="#" target="_blank" rel="noopener noreferrer">
+          <span>
+            <span class="modal-branch-title">Tucumán</span>
+            <span class="modal-branch-sub" data-branch-field="tucuman.address">Batalla de Junín 67, Piso 4 · Of. D</span>
+          </span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6"/>
+          </svg>
+        </a>
+
+        <a class="modal-branch-link" id="modal-wa-salta" href="#" target="_blank" rel="noopener noreferrer">
+          <span>
+            <span class="modal-branch-title">Salta</span>
+            <span class="modal-branch-sub" data-branch-field="salta.address">Almirante Brown 340</span>
+          </span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/catalogo.js" defer></script>
+</body>
+</html>

@@ -509,6 +509,7 @@ h3 {
 }
 
 .product-media {
+  position: relative;
   aspect-ratio: 16 / 10;
   background-color: var(--bg-brand);
   overflow: hidden;
@@ -1548,4 +1549,65 @@ textarea.form-control {
   .catalog-skeleton {
     animation: none;
   }
+}
+
+/* Tarjetas de Categorías como acceso al Catálogo */
+.category-count {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(180, 199, 118, 0.42);
+  background-color: rgba(15, 26, 36, 0.86);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-text);
+}
+
+.product-card-link {
+  text-decoration: none;
+}
+
+.product-card-link:hover {
+  border-color: var(--accent);
+}
+
+.card-cta-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-text);
+  transition: color var(--t-fast) var(--ease-out);
+}
+
+.card-cta-label svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--t-fast) var(--ease-out);
+}
+
+.product-card-link:hover .card-cta-label {
+  color: var(--text-ice);
+}
+
+.product-card-link:hover .card-cta-label svg {
+  transform: translateX(4px);
+}
+
+/* Página dedicada de Catálogo */
+.catalog-page-section {
+  padding-block: clamp(44px, 6vw, 72px) clamp(72px, 9vw, 110px);
+}
+
+.header-back-btn {
+  white-space: nowrap;
 }

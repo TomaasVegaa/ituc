@@ -141,20 +141,66 @@
         <div class="section-header-row reveal">
           <div class="section-header">
             <p class="eyebrow">CATÁLOGO</p>
-            <h2>Celulares y accesorios.</h2>
+            <h2>Equipos y accesorios.</h2>
           </div>
 
-          <div class="catalog-filters" role="group" aria-label="Filtrar catálogo por categoría">
-            <button type="button" class="filter-pill is-active" data-catalog-filter="all" aria-pressed="true">Todos</button>
-            <button type="button" class="filter-pill" data-catalog-filter="celulares" aria-pressed="false">Celulares</button>
-            <button type="button" class="filter-pill" data-catalog-filter="accesorios" aria-pressed="false">Accesorios</button>
-          </div>
+          <a class="btn btn-secondary btn-sm" href="/catalogo" data-catalog-link="all">
+            <span>Ver todo el catálogo</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6"/>
+            </svg>
+          </a>
         </div>
 
-        <div class="catalog-grid" id="catalog-grid" aria-live="polite">
-          <div class="card catalog-skeleton" aria-hidden="true"></div>
-          <div class="card catalog-skeleton" aria-hidden="true"></div>
-          <div class="card catalog-skeleton" aria-hidden="true"></div>
+        <div class="products-grid">
+          <a class="card product-card product-card-link reveal" href="/catalogo?cat=celulares" data-catalog-link="celulares">
+            <div class="product-media">
+              <img src="assets/img/cat-iphones.png" alt="Modelos iPhone nuevos y seminuevos seleccionados" width="800" height="500" loading="lazy">
+              <span class="category-count" data-category-count="celulares">Celulares</span>
+            </div>
+            <div class="product-body">
+              <h3>iPhone</h3>
+              <p class="product-caption">Nuevos sellados y seminuevos</p>
+              <div class="chip-row">
+                <span class="chip">Serie 16</span>
+                <span class="chip">Serie 15</span>
+                <span class="chip">Serie 14</span>
+                <span class="chip">Seminuevos</span>
+              </div>
+              <div class="product-footer">
+                <span class="card-cta-label">
+                  <span>Ver celulares</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14m-6-6 6 6-6 6"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a class="card product-card product-card-link reveal" href="/catalogo?cat=accesorios" data-catalog-link="accesorios">
+            <div class="product-media">
+              <img src="assets/img/cat-ecosystem.png" alt="Accesorios y ecosistema Apple: auriculares, reloj inteligente y laptop" width="800" height="500" loading="lazy">
+              <span class="category-count" data-category-count="accesorios">Accesorios</span>
+            </div>
+            <div class="product-body">
+              <h3>Accesorios &amp; Ecosistema</h3>
+              <p class="product-caption">AirPods · Watch · MagSafe · Mac · iPad</p>
+              <div class="chip-row">
+                <span class="chip">Originales</span>
+                <span class="chip">MagSafe</span>
+                <span class="chip">Audio</span>
+              </div>
+              <div class="product-footer">
+                <span class="card-cta-label">
+                  <span>Ver accesorios</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14m-6-6 6 6-6 6"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
         </div>
 
         <div class="card tradein-banner reveal">

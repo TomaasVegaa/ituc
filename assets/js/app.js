@@ -313,147 +313,42 @@
     });
   }
 
-  function createArrowIcon() {
-    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('viewBox', '0 0 24 24');
-    svg.setAttribute('fill', 'none');
-    svg.setAttribute('stroke', 'currentColor');
-    svg.setAttribute('stroke-width', '2');
-    svg.setAttribute('stroke-linecap', 'round');
-    svg.setAttribute('stroke-linejoin', 'round');
-    svg.setAttribute('aria-hidden', 'true');
-    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('d', 'M5 12h14m-6-6 6 6-6 6');
-    svg.appendChild(path);
-    return svg;
-  }
+  function initCategoryCards() {
+    var isSubfolder = /\/ituc(\/|\/(index|catalogo|admin)\.html)?$/i.test(window.location.pathname);
 
-  function initDynamicCatalog() {
-    var grid = document.getElementById('catalog-grid');
-    var filterButtons = document.querySelectorAll('[data-catalog-filter]');
-    if (!grid) return;
+    document.querySelectorAll('[data-catalog-link]').forEach(function (link) {
+      var cat = link.getAttribute('data-catalog-link');
+      var base = isSubfolder ? 'catalogo.html' : '/catalogo';
+      link.href = cat && cat !== 'all' ? base + '?cat=' + encodeURIComponent(cat) : base;
+    });
 
-    var STOCK_LABELS = {
-      disponible: 'Disponible',
-      ultimas: 'Últimas unidades',
-      pedido: 'A pedido',
-    };
-
-    var allProducts = [];
-    var activeFilter = 'all';
-
-    function renderProducts() {
-      grid.innerHTML = '';
-
-      var filtered = allProducts.filter(function (item) {
-        if (item.visible === false) return false;
-        if (activeFilter === 'all') return true;
-        return item.category === activeFilter;
+    function updateCounts(products) {
+      var counts = { celulares: 0, accesorios: 0 };
+      products.forEach(function (item) {
+        if (item.visible === false) return;
+        if (item.category === 'celulares') counts.celulares += 1;
+        if (item.category === 'accesorios') counts.accesorios += 1;
       });
 
-      if (!filtered.length) {
-        var emptyCard = document.createElement('div');
-        emptyCard.className = 'card catalog-empty';
-        emptyCard.textContent = 'No hay productos publicados en esta categoría por el momento.';
-        grid.appendChild(emptyCard);
-        return;
-      }
-
-      filtered.forEach(function (item) {
-        var card = document.createElement('article');
-        card.className = 'card catalog-card';
-
-        var media = document.createElement('div');
-        media.className = 'catalog-media';
-
-        var img = document.createElement('img');
-        img.src = item.image || 'assets/img/cat-iphones.png';
-        img.alt = item.title || 'Producto iTuc Cel';
-        img.width = 800;
-        img.height = 500;
-        img.loading = 'lazy';
-        media.appendChild(img);
-
-        var stockKey = STOCK_LABELS[item.stock] ? item.stock : 'disponible';
-        var badge = document.createElement('span');
-        badge.className = 'stock-badge is-' + stockKey;
-        badge.textContent = STOCK_LABELS[stockKey];
-        media.appendChild(badge);
-
-        var body = document.createElement('div');
-        body.className = 'catalog-body';
-
-        var meta = document.createElement('div');
-        meta.className = 'catalog-meta';
-
-        var title = document.createElement('h3');
-        title.textContent = item.title || '';
-        meta.appendChild(title);
-
-        if (item.subtitle) {
-          var sub = document.createElement('p');
-          sub.className = 'catalog-sub';
-          sub.textContent = item.subtitle;
-          meta.appendChild(sub);
+      document.querySelectorAll('[data-category-count]').forEach(function (badge) {
+        var key = badge.getAttribute('data-category-count');
+        var count = counts[key] || 0;
+        if (count > 0) {
+          badge.textContent = count + (count === 1 ? ' disponible' : ' disponibles');
         }
-
-        var bottom = document.createElement('div');
-        bottom.className = 'catalog-bottom';
-
-        var price = document.createElement('span');
-        price.className = 'catalog-price';
-        price.textContent = item.price || 'Consultar';
-
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'btn btn-secondary btn-sm';
-        btn.setAttribute('data-open-branch-picker', '');
-        var contextText = item.subtitle ? item.title + ' (' + item.subtitle + ')' : item.title;
-        btn.setAttribute('data-wa-context', contextText || 'Catálogo');
-
-        var btnText = document.createElement('span');
-        btnText.textContent = 'Consultar';
-        btn.appendChild(btnText);
-        btn.appendChild(createArrowIcon());
-
-        bottom.appendChild(price);
-        bottom.appendChild(btn);
-
-        body.appendChild(meta);
-        body.appendChild(bottom);
-
-        card.appendChild(media);
-        card.appendChild(body);
-        grid.appendChild(card);
       });
     }
 
-    filterButtons.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        activeFilter = btn.getAttribute('data-catalog-filter') || 'all';
-        filterButtons.forEach(function (other) {
-          var isMatch = other === btn;
-          other.classList.toggle('is-active', isMatch);
-          other.setAttribute('aria-pressed', String(isMatch));
-        });
-        renderProducts();
-      });
-    });
-
-    function loadFromLocalSeed() {
+    function loadSeedCounts() {
       return fetch('data/products.json', { cache: 'no-store' })
         .then(function (res) {
           if (!res.ok) throw new Error('Seed HTTP ' + res.status);
           return res.json();
         })
         .then(function (list) {
-          allProducts = Array.isArray(list) ? list : [];
-          renderProducts();
+          if (Array.isArray(list)) updateCounts(list);
         })
-        .catch(function () {
-          allProducts = [];
-          renderProducts();
-        });
+        .catch(function () {});
     }
 
     fetch('/api/products', { cache: 'no-store' })
@@ -468,8 +363,7 @@
             if (cached) {
               var parsed = JSON.parse(cached);
               if (Array.isArray(parsed)) {
-                allProducts = parsed;
-                renderProducts();
+                updateCounts(parsed);
                 return;
               }
             }
@@ -477,11 +371,12 @@
             // Ignorar storage bloqueado
           }
         }
-        allProducts = Array.isArray(payload.products) ? payload.products : [];
-        renderProducts();
+        if (payload && Array.isArray(payload.products)) {
+          updateCounts(payload.products);
+        }
       })
       .catch(function () {
-        loadFromLocalSeed();
+        loadSeedCounts();
       });
   }
 
@@ -526,7 +421,7 @@
     hydrateBranchData();
     adjustAdminLink();
     initHeaderAndMobileMenu();
-    initDynamicCatalog();
+    initCategoryCards();
     initBranchMapSwitcher();
     initRepairForm();
     initBranchPickerModal();

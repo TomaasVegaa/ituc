@@ -11,6 +11,7 @@ npm start
 ```
 
 - Sitio público: `http://localhost:3000`
+- Catálogo por categorías: `http://localhost:3000/catalogo`
 - Panel administrador: `http://localhost:3000/admin`
 - Contraseña demo por defecto: `ituc2026`
 

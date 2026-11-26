@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "description": "Sitio web, catálogo administrable y API serverless para iTuc Cel",
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node scripts/dev-server.js",
+    "dev": "node scripts/dev-server.js"
   }
 }

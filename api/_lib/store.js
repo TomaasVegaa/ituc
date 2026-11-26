@@ -69,8 +69,12 @@ function normalizeProductsList(list) {
 }
 
 async function readSeedProducts() {
-  const raw = await fs.readFile(SEED_PATH, 'utf8');
-  return normalizeProductsList(JSON.parse(raw));
+  try {
+    const raw = await fs.readFile(SEED_PATH, 'utf8');
+    return normalizeProductsList(JSON.parse(raw));
+  } catch {
+    return normalizeProductsList(require('../../data/products.json'));
+  }
 }
 
 async function runRedisCommand(config, commandParts) {

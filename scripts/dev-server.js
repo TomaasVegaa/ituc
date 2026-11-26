@@ -4,11 +4,11 @@ const fs = require('fs/promises');
 const http = require('http');
 const path = require('path');
 
-const authHandler = require('./api/auth');
-const healthHandler = require('./api/health');
-const productsHandler = require('./api/products');
+const authHandler = require('../api/auth');
+const healthHandler = require('../api/health');
+const productsHandler = require('../api/products');
 
-const ROOT_DIR = __dirname;
+const ROOT_DIR = path.resolve(__dirname, '..');
 const PORT = Number(process.env.PORT) || 3000;
 
 const MIME_TYPES = {
@@ -27,9 +27,9 @@ const MIME_TYPES = {
 const BLOCKED_STATIC_PATHS = new Set([
   '/package.json',
   '/vercel.json',
-  '/server.js',
   '/readme.md',
   '/.gitignore',
+  '/.vercelignore',
 ]);
 
 async function serveStatic(pathname, res) {
@@ -48,6 +48,7 @@ async function serveStatic(pathname, res) {
   if (
     normalized.includes('..') ||
     lower.startsWith('/api') ||
+    lower.startsWith('/scripts') ||
     lower.startsWith('/.git') ||
     lower.startsWith('/.env') ||
     BLOCKED_STATIC_PATHS.has(lower)
@@ -131,6 +132,7 @@ if (require.main === module) {
   server.listen(PORT, () => {
     console.log('iTuc Cel servidor activo');
     console.log('  Sitio: http://localhost:' + PORT);
+    console.log('  Catálogo: http://localhost:' + PORT + '/catalogo');
     console.log('  Admin: http://localhost:' + PORT + '/admin');
   });
 }

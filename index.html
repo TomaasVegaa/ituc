@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iTuc Cel — Apple Store &amp; Service Técnico | Tucumán &amp; Salta</title>
+  <meta name="description" content="iTuc Cel: venta de iPhone, ecosistema Apple y servicio técnico especializado iTuc Care en Tucumán y Salta.">
+  <meta name="theme-color" content="#0F1A24">
+  <link rel="icon" type="image/png" href="assets/img/logo-ituc.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Ir al contenido</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="#inicio" aria-label="iTuc Cel Inicio">
+        <img class="brand-logo" src="assets/img/logo-ituc.png" alt="Logo de iTuc Cel" width="40" height="40">
+        <span>iTuc Cel</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#productos">Productos</a>
+        <a href="#service">Service</a>
+        <a href="#sucursales">Sucursales</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          type="button"
+          class="btn btn-primary btn-sm header-wa-btn"
+          data-open-branch-picker
+          data-wa-context="Consulta general"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </button>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Abrir menú"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil" hidden>
+      <div class="mobile-nav-links">
+        <a href="#productos">Productos</a>
+        <a href="#service">Service</a>
+        <a href="#sucursales">Sucursales</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary btn-full"
+        data-open-branch-picker
+        data-wa-context="Consulta general"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        <span>Escribir por WhatsApp</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Tucumán · Salta</span>
+          </div>
+
+          <h1>Tecnología Apple.<br><span>Service especializado.</span></h1>
+          <p class="hero-subtitle">Equipos seleccionados y laboratorio técnico con garantía.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#service">
+              <span>Solicitar Service</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6"/>
+              </svg>
+            </a>
+            <a class="btn btn-secondary" href="#productos">Ver Productos</a>
+          </div>
+
+          <ul class="trust-bar">
+            <li class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              <span>Garantía escrita</span>
+            </li>
+            <li class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m7 16-4-4 4-4"/>
+                <path d="M3 12h18"/>
+                <path d="m17 8 4 4-4 4"/>
+              </svg>
+              <span>Plan Canje</span>
+            </li>
+            <li class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <span>Atención personalizada</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-frame">
+            <img src="assets/img/hero-iphone.png" alt="Smartphone de titanio exhibido sobre fondo oscuro minimalista" width="800" height="1000">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="section" id="productos">
+      <div class="container">
+        <div class="section-header-row reveal">
+          <div class="section-header">
+            <p class="eyebrow">CATÁLOGO</p>
+            <h2>Celulares y accesorios.</h2>
+          </div>
+
+          <div class="catalog-filters" role="group" aria-label="Filtrar catálogo por categoría">
+            <button type="button" class="filter-pill is-active" data-catalog-filter="all" aria-pressed="true">Todos</button>
+            <button type="button" class="filter-pill" data-catalog-filter="celulares" aria-pressed="false">Celulares</button>
+            <button type="button" class="filter-pill" data-catalog-filter="accesorios" aria-pressed="false">Accesorios</button>
+          </div>
+        </div>
+
+        <div class="catalog-grid" id="catalog-grid" aria-live="polite">
+          <div class="card catalog-skeleton" aria-hidden="true"></div>
+          <div class="card catalog-skeleton" aria-hidden="true"></div>
+          <div class="card catalog-skeleton" aria-hidden="true"></div>
+        </div>
+
+        <div class="card tradein-banner reveal">
+          <div class="tradein-info">
+            <div class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m17 2 4 4-4 4"/>
+                <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+                <path d="m7 22-4-4 4-4"/>
+                <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Plan Canje</h3>
+              <p>Entregá tu equipo actual en parte de pago.</p>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-open-branch-picker
+            data-wa-context="Cotización por Plan Canje"
+          >
+            <span>Cotizar mi equipo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- iTuc Care — Service de Reparación -->
+    <section class="section" id="service">
+      <div class="container service-grid">
+        <div class="service-intro reveal">
+          <p class="eyebrow">ITUC CARE · SERVICE</p>
+          <h2>Mantenimiento y reparación.</h2>
+          <p class="section-subtitle">Diagnóstico claro y repuestos de calidad.</p>
+
+          <div class="service-media">
+            <img src="assets/img/service-lab.svg" alt="Esquema técnico de precisión para diagnóstico y reparación de iPhone" width="800" height="500" loading="lazy">
+          </div>
+
+          <div class="service-chips">
+            <div class="service-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="6" y="2" width="12" height="20" rx="2.5"/>
+                <path d="M10 18h4"/>
+              </svg>
+              <span>Pantalla / Módulo</span>
+            </div>
+            <div class="service-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="7" width="18" height="10" rx="2"/>
+                <path d="M22 10v4"/>
+                <path d="M11 10l-2 2h3l-2 2"/>
+              </svg>
+              <span>Cambio de batería</span>
+            </div>
+            <div class="service-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22v-5"/>
+                <path d="M9 8V2"/>
+                <path d="M15 8V2"/>
+                <path d="M18 8v5a6 6 0 0 1-12 0V8Z"/>
+              </svg>
+              <span>Pin de carga</span>
+            </div>
+            <div class="service-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="7" y="7" width="10" height="10" rx="1.5"/>
+                <path d="M9 4v3m6-3v3M9 17v3m6-3v3M4 9h3m-3 6h3M17 9h3m-3 6h3"/>
+              </svg>
+              <span>Microelectrónica</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card form-card reveal">
+          <form id="repair-form" novalidate>
+            <fieldset class="branch-fieldset">
+              <legend class="form-label">Elegí tu sucursal</legend>
+              <div class="branch-radio-grid">
+                <label class="branch-radio">
+                  <input type="radio" name="repairBranch" value="tucuman" checked>
+                  <span class="branch-radio-box">
+                    <span class="branch-radio-title">
+                      <span>Tucumán</span>
+                      <svg class="branch-radio-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m5 12 5 5L20 7"/>
+                      </svg>
+                    </span>
+                    <span class="branch-radio-sub">Junín 67</span>
+                  </span>
+                </label>
+
+                <label class="branch-radio">
+                  <input type="radio" name="repairBranch" value="salta">
+                  <span class="branch-radio-box">
+                    <span class="branch-radio-title">
+                      <span>Salta</span>
+                      <svg class="branch-radio-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m5 12 5 5L20 7"/>
+                      </svg>
+                    </span>
+                    <span class="branch-radio-sub">Brown 340</span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="form-group">
+              <label class="form-label" for="repair-device">Dispositivo</label>
+              <select class="form-control" id="repair-device" name="device" required aria-describedby="error-device">
+                <option value="">Seleccioná tu equipo</option>
+                <option value="iPhone 16 / 16 Pro">iPhone 16 / 16 Pro</option>
+                <option value="iPhone 15 / 15 Pro">iPhone 15 / 15 Pro</option>
+                <option value="iPhone 14 / 14 Pro">iPhone 14 / 14 Pro</option>
+                <option value="iPhone 13 / 13 Pro">iPhone 13 / 13 Pro</option>
+                <option value="iPhone 12 / 11 / SE">iPhone 12 / 11 / SE</option>
+                <option value="iPad / MacBook / Watch">iPad / MacBook / Watch</option>
+                <option value="Otro dispositivo">Otro dispositivo</option>
+              </select>
+              <span class="field-error" id="error-device" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="repair-issue">Servicio / Falla</label>
+              <select class="form-control" id="repair-issue" name="issue" required aria-describedby="error-issue">
+                <option value="">Seleccioná el servicio</option>
+                <option value="Cambio de pantalla / módulo">Cambio de pantalla / módulo</option>
+                <option value="Cambio de batería">Cambio de batería</option>
+                <option value="Pin de carga">Pin de carga</option>
+                <option value="Cámara / Audio / Face ID">Cámara / Audio / Face ID</option>
+                <option value="Limpieza y mantenimiento">Limpieza y mantenimiento</option>
+                <option value="No enciende / Diagnóstico">No enciende / Diagnóstico</option>
+                <option value="Otra consulta">Otra consulta</option>
+              </select>
+              <span class="field-error" id="error-issue" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="repair-name">Tu nombre</label>
+              <input class="form-control" id="repair-name" name="name" type="text" autocomplete="name" required placeholder="Ej: Matías" aria-describedby="error-name">
+              <span class="field-error" id="error-name" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="repair-notes">Detalle breve (opcional)</label>
+              <textarea class="form-control" id="repair-notes" name="notes" rows="2" placeholder="Ej: Pantalla astillada, batería al 74%"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="repair-submit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              <span id="repair-submit-label">Enviar a Service Tucumán</span>
+            </button>
+
+            <div class="repair-feedback" id="repair-feedback" hidden role="status" aria-live="polite">
+              <div class="repair-feedback-head">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+                <span>Consulta lista para WhatsApp</span>
+              </div>
+              <p id="repair-summary"></p>
+              <a class="btn btn-secondary btn-sm" id="repair-manual-link" href="#" target="_blank" rel="noopener noreferrer">
+                <span>Abrir WhatsApp ahora</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17 17 7M7 7h10v10"/>
+                </svg>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sucursales & Mapa -->
+    <section class="section" id="sucursales">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">UBICACIONES</p>
+          <h2>Nuestros locales.</h2>
+        </div>
+
+        <div class="locations-grid reveal">
+          <div class="branch-list">
+            <div class="branch-card is-active" data-branch-card="tucuman">
+              <button type="button" class="branch-select-btn" data-branch-select="tucuman" aria-pressed="true">
+                <span class="branch-card-top">
+                  <h3>Tucumán</h3>
+                  <span class="branch-tag">Casa Central</span>
+                </span>
+                <p class="branch-address" data-branch-field="tucuman.address">Batalla de Junín 67, Piso 4 · Of. D</p>
+                <p class="branch-hours" data-branch-field="tucuman.hours">Lun a Vie 9:00–21:00 · Sáb 10:00–17:00</p>
+              </button>
+              <div class="branch-card-footer">
+                <a class="branch-map-link" data-branch-map="tucuman" href="https://www.google.com/maps/search/?api=1&query=Batalla+de+Junin+67,+San+Miguel+de+Tucuman,+Argentina" target="_blank" rel="noopener noreferrer">
+                  <span>Cómo llegar</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="branch-card" data-branch-card="salta">
+              <button type="button" class="branch-select-btn" data-branch-select="salta" aria-pressed="false">
+                <span class="branch-card-top">
+                  <h3>Salta</h3>
+                  <span class="branch-tag">Sucursal</span>
+                </span>
+                <p class="branch-address" data-branch-field="salta.address">Almirante Brown 340</p>
+                <p class="branch-hours" data-branch-field="salta.hours">Lun a Vie 9:30–20:30 · Sáb 10:00–14:00</p>
+              </button>
+              <div class="branch-card-footer">
+                <a class="branch-map-link" data-branch-map="salta" href="https://www.google.com/maps/search/?api=1&query=Almirante+Brown+340,+Salta,+Argentina" target="_blank" rel="noopener noreferrer">
+                  <span>Cómo llegar</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-stage">
+            <iframe
+              class="map-iframe"
+              id="branch-map"
+              src="https://maps.google.com/maps?q=Batalla+de+Junin+67,+San+Miguel+de+Tucuman,+Argentina&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa de sucursal iTuc Cel - Tucumán"
+            ></iframe>
+            <div class="map-overlay">
+              <div>
+                <span class="map-overlay-title" id="map-overlay-title">Sucursal Tucumán</span>
+                <span class="map-overlay-addr" id="map-overlay-addr">Batalla de Junín 67, Piso 4 · Of. D</span>
+              </div>
+              <a class="btn btn-secondary btn-sm" id="map-overlay-link" href="https://www.google.com/maps/search/?api=1&query=Batalla+de+Junin+67,+San+Miguel+de+Tucuman,+Argentina" target="_blank" rel="noopener noreferrer">
+                <span>Abrir en Maps</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17 17 7M7 7h10v10"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contáctanos & Redes -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">CONTÁCTANOS</p>
+          <h2>Escribinos directo.</h2>
+        </div>
+
+        <div class="contact-grid">
+          <article class="card wa-card reveal">
+            <div class="wa-card-top">
+              <div>
+                <h3>Sucursal Tucumán</h3>
+                <p class="wa-card-meta" data-branch-field="tucuman.address">Batalla de Junín 67, Piso 4 · Of. D</p>
+                <p class="wa-card-hours" data-branch-field="tucuman.whatsappDisplay">+54 381 472-6242</p>
+              </div>
+              <div class="wa-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+              </div>
+            </div>
+            <a class="btn btn-primary" data-wa-branch="tucuman" href="#" target="_blank" rel="noopener noreferrer">
+              <span>Chatear por WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="card wa-card reveal">
+            <div class="wa-card-top">
+              <div>
+                <h3>Sucursal Salta</h3>
+                <p class="wa-card-meta" data-branch-field="salta.address">Almirante Brown 340</p>
+                <p class="wa-card-hours" data-branch-field="salta.whatsappDisplay">WhatsApp Directo · Salta</p>
+              </div>
+              <div class="wa-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+              </div>
+            </div>
+            <a class="btn btn-primary" data-wa-branch="salta" href="#" target="_blank" rel="noopener noreferrer">
+              <span>Chatear por WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6"/>
+              </svg>
+            </a>
+          </article>
+        </div>
+
+        <div class="card social-card reveal">
+          <div class="social-info">
+            <div class="ig-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div>
+              <h3>@ituc.cel</h3>
+              <p>Novedades, ingresos y promociones.</p>
+            </div>
+          </div>
+
+          <a class="btn btn-secondary" id="instagram-link" href="https://www.instagram.com/ituc.cel/?hl=es" target="_blank" rel="noopener noreferrer">
+            <span>Seguir en Instagram</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M7 7h10v10"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo-ituc.png" alt="iTuc Cel" width="28" height="28">
+        <span>iTuc Cel · Tucumán &amp; Salta</span>
+      </div>
+      <nav class="footer-links" aria-label="Enlaces del pie">
+        <a href="#productos">Productos</a>
+        <a href="#service">Service</a>
+        <a href="#sucursales">Sucursales</a>
+        <a href="#contacto">Contacto</a>
+        <a href="/admin" data-admin-link>Admin</a>
+      </nav>
+      <span>&copy; 2026 iTuc Cel</span>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de acceso rápido a WhatsApp por sucursal -->
+  <button
+    type="button"
+    class="wa-fab"
+    data-open-branch-picker
+    data-wa-context="Consulta rápida"
+    aria-label="Elegir sucursal para WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+  </button>
+
+  <!-- Modal Selector de Sucursal WhatsApp -->
+  <div class="modal-backdrop" id="branch-modal" hidden>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="branch-modal-title">
+      <div class="modal-head">
+        <h3 id="branch-modal-title">Elegí la sucursal</h3>
+        <button type="button" class="modal-close" id="branch-modal-close" aria-label="Cerrar selector">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <p class="modal-sub" id="branch-modal-context">Abrimos WhatsApp directo con tu consulta.</p>
+
+      <div class="modal-branches">
+        <a class="modal-branch-link" id="modal-wa-tucuman" href="#" target="_blank" rel="noopener noreferrer">
+          <span>
+            <span class="modal-branch-title">Tucumán</span>
+            <span class="modal-branch-sub" data-branch-field="tucuman.address">Batalla de Junín 67, Piso 4 · Of. D</span>
+          </span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6"/>
+          </svg>
+        </a>
+
+        <a class="modal-branch-link" id="modal-wa-salta" href="#" target="_blank" rel="noopener noreferrer">
+          <span>
+            <span class="modal-branch-title">Salta</span>
+            <span class="modal-branch-sub" data-branch-field="salta.address">Almirante Brown 340</span>
+          </span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

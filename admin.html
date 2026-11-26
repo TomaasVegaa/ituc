@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iTuc Cel — Panel de Catálogo</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0F1A24">
+  <link rel="icon" type="image/png" href="assets/img/logo-ituc.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-body">
+  <a class="skip-link" href="#admin-main">Ir al panel</a>
+
+  <!-- Vista de Login -->
+  <main id="admin-main">
+    <section class="admin-login-wrap" id="admin-login-view">
+      <div class="card admin-login-card">
+        <div class="admin-login-brand">
+          <img class="brand-logo" src="assets/img/logo-ituc.png" alt="Logo iTuc Cel" width="44" height="44">
+          <div>
+            <p class="eyebrow">ADMINISTRACIÓN</p>
+            <h1>Panel de Catálogo</h1>
+          </div>
+        </div>
+
+        <p class="admin-login-sub">Ingresá para agregar, editar u ordenar celulares y accesorios.</p>
+
+        <div class="admin-notice" id="api-unavailable-notice" hidden role="alert">
+          <p>El backend API no responde en este servidor. Para administrar el catálogo ejecutá <code>npm start</code> localmente o abrí el sitio desplegado en Vercel.</p>
+        </div>
+
+        <form id="admin-login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="admin-password">Contraseña</label>
+            <div class="password-wrap">
+              <input
+                class="form-control"
+                id="admin-password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                placeholder="Ingresá la clave de acceso"
+                aria-describedby="login-error"
+              >
+              <button
+                type="button"
+                class="password-toggle"
+                id="toggle-password-btn"
+                aria-label="Mostrar u ocultar contraseña"
+                aria-pressed="false"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+            <span class="field-error" id="login-error" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="login-submit-btn">
+            <span>Ingresar</span>
+          </button>
+        </form>
+
+        <p class="admin-demo-hint" id="demo-password-hint" hidden>
+          Clave demo por defecto: <code>ituc2026</code> (cambiala con <code>ADMIN_PASSWORD</code> en Vercel).
+        </p>
+
+        <div class="admin-login-footer">
+          <a class="btn btn-ghost btn-sm" href="/" data-site-home>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5m6 6-6-6 6-6"/>
+            </svg>
+            <span>Volver al sitio</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vista de Dashboard -->
+    <section class="admin-dashboard" id="admin-dashboard-view" hidden>
+      <header class="site-header is-scrolled">
+        <div class="container admin-topbar">
+          <div class="brand-link">
+            <img class="brand-logo" src="assets/img/logo-ituc.png" alt="iTuc Cel" width="38" height="38">
+            <span>Admin · Catálogo</span>
+          </div>
+
+          <div class="admin-topbar-right">
+            <span class="storage-badge" id="storage-badge">Verificando almacenamiento...</span>
+            <a class="btn btn-secondary btn-sm" href="/" data-site-home>Ver sitio</a>
+            <button type="button" class="btn btn-secondary btn-sm" id="logout-btn">Salir</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="container admin-content">
+        <div class="admin-toolbar">
+          <div class="catalog-filters" role="group" aria-label="Filtrar productos">
+            <button type="button" class="filter-pill is-active" data-admin-filter="all" aria-pressed="true">Todos</button>
+            <button type="button" class="filter-pill" data-admin-filter="celulares" aria-pressed="false">Celulares</button>
+            <button type="button" class="filter-pill" data-admin-filter="accesorios" aria-pressed="false">Accesorios</button>
+          </div>
+
+          <button type="button" class="btn btn-primary" id="new-product-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            <span>Nuevo producto</span>
+          </button>
+        </div>
+
+        <p class="admin-ephemeral-banner" id="ephemeral-banner" hidden>
+          Modo Demo activo en Vercel: conectá <strong>Upstash Redis</strong> en tu proyecto para guardar cambios entre sesiones y dispositivos.
+        </p>
+
+        <div class="admin-product-list" id="admin-product-list" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Crear / Editar Producto -->
+  <div class="modal-backdrop" id="product-modal" hidden>
+    <div class="modal-panel admin-modal-panel" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+      <div class="modal-head">
+        <h2 id="product-modal-title">Nuevo producto</h2>
+        <button type="button" class="modal-close" id="product-modal-close" aria-label="Cerrar editor">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <form id="product-form" class="admin-product-form" novalidate>
+        <input type="hidden" id="product-id" value="">
+
+        <div class="form-group">
+          <label class="form-label" for="product-title">Nombre del producto</label>
+          <input class="form-control" id="product-title" type="text" required maxlength="80" placeholder="Ej: iPhone 16 Pro 256 GB" aria-describedby="error-product-title">
+          <span class="field-error" id="error-product-title" aria-live="polite"></span>
+        </div>
+
+        <div class="admin-form-row">
+          <div class="form-group">
+            <label class="form-label" for="product-category">Categoría</label>
+            <select class="form-control" id="product-category" required>
+              <option value="celulares">Celulares</option>
+              <option value="accesorios">Accesorios</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="product-stock">Disponibilidad</label>
+            <select class="form-control" id="product-stock" required>
+              <option value="disponible">Disponible</option>
+              <option value="ultimas">Últimas unidades</option>
+              <option value="pedido">A pedido</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="admin-form-row">
+          <div class="form-group">
+            <label class="form-label" for="product-subtitle">Detalle breve</label>
+            <input class="form-control" id="product-subtitle" type="text" maxlength="90" placeholder="Ej: 128 GB · Titanio · Sellado">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="product-price">Precio</label>
+            <input class="form-control" id="product-price" type="text" maxlength="32" placeholder="Ej: USD 980 o Consultar">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="product-image-url">Imagen</label>
+          <div class="preset-row" role="group" aria-label="Fotos de estudio rápidas">
+            <button type="button" class="preset-btn" data-image-preset="assets/img/hero-iphone.png">iPhone Hero</button>
+            <button type="button" class="preset-btn" data-image-preset="assets/img/cat-iphones.png">iPhone Pro</button>
+            <button type="button" class="preset-btn" data-image-preset="assets/img/cat-ecosystem.png">Ecosistema</button>
+            <label class="preset-btn preset-upload">
+              <input type="file" id="product-image-file" accept="image/png,image/jpeg,image/webp" hidden>
+              <span>Subir foto</span>
+            </label>
+          </div>
+          <input class="form-control" id="product-image-url" type="text" placeholder="assets/img/cat-iphones.png o https://..." aria-describedby="error-product-image">
+          <span class="field-error" id="error-product-image" aria-live="polite"></span>
+
+          <div class="image-preview-wrap">
+            <img id="product-image-preview" src="assets/img/cat-iphones.png" alt="Vista previa del producto" width="320" height="200">
+          </div>
+        </div>
+
+        <label class="checkbox-row" for="product-visible">
+          <input id="product-visible" type="checkbox" checked>
+          <span>Mostrar en el catálogo público</span>
+        </label>
+
+        <div class="admin-modal-actions">
+          <button type="button" class="btn btn-secondary" id="product-cancel-btn">Cancelar</button>
+          <button type="submit" class="btn btn-primary" id="product-save-btn">Guardar producto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Confirmar Eliminación -->
+  <div class="modal-backdrop" id="delete-modal" hidden>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+      <div class="modal-head">
+        <h3 id="delete-modal-title">Eliminar producto</h3>
+        <button type="button" class="modal-close" id="delete-modal-close" aria-label="Cerrar confirmación">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <p class="modal-sub" id="delete-modal-desc">¿Querés quitar este producto del catálogo?</p>
+      <div class="admin-modal-actions">
+        <button type="button" class="btn btn-secondary" id="delete-cancel-btn">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="delete-confirm-btn">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-toast" id="admin-toast" hidden role="status" aria-live="polite"></div>
+
+  <script src="assets/js/admin.js" defer></script>
+</body>
+</html>

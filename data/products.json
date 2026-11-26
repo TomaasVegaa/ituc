@@ -1,0 +1,68 @@
+[
+  {
+    "id": "iphone-16-pro-max",
+    "title": "iPhone 16 Pro Max",
+    "category": "celulares",
+    "subtitle": "256 GB · Titanio Natural · Sellado",
+    "price": "USD 1.290",
+    "stock": "disponible",
+    "image": "assets/img/hero-iphone.png",
+    "visible": true,
+    "order": 0
+  },
+  {
+    "id": "iphone-15-pro",
+    "title": "iPhone 15 Pro",
+    "category": "celulares",
+    "subtitle": "128 GB · Titanio · Seminuevo 98%",
+    "price": "USD 890",
+    "stock": "disponible",
+    "image": "assets/img/cat-iphones.png",
+    "visible": true,
+    "order": 1
+  },
+  {
+    "id": "iphone-14",
+    "title": "iPhone 14",
+    "category": "celulares",
+    "subtitle": "128 GB · Garantía escrita",
+    "price": "USD 560",
+    "stock": "ultimas",
+    "image": "assets/img/cat-iphones.png",
+    "visible": true,
+    "order": 2
+  },
+  {
+    "id": "airpods-pro-2",
+    "title": "AirPods Pro (2da Gen)",
+    "category": "accesorios",
+    "subtitle": "USB-C · Cancelación activa",
+    "price": "USD 260",
+    "stock": "disponible",
+    "image": "assets/img/cat-ecosystem.png",
+    "visible": true,
+    "order": 3
+  },
+  {
+    "id": "apple-watch-s10",
+    "title": "Apple Watch Series 10",
+    "category": "accesorios",
+    "subtitle": "42 mm · Aluminio GPS",
+    "price": "USD 460",
+    "stock": "pedido",
+    "image": "assets/img/cat-ecosystem.png",
+    "visible": true,
+    "order": 4
+  },
+  {
+    "id": "pack-magsafe",
+    "title": "Pack MagSafe 20W",
+    "category": "accesorios",
+    "subtitle": "Cargador inalámbrico + Funda",
+    "price": "Consultar",
+    "stock": "disponible",
+    "image": "assets/img/cat-ecosystem.png",
+    "visible": true,
+    "order": 5
+  }
+]

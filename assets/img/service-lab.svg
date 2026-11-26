@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" fill="none">
+  <defs>
+    <linearGradient id="bg-slate" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#121F2B"/>
+      <stop offset="55%" stop-color="#182838"/>
+      <stop offset="100%" stop-color="#111C26"/>
+    </linearGradient>
+    <radialGradient id="glow-olive" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#90A054" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#90A054" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-ice" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#DCF0F8" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#DCF0F8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1" fill="#DCF0F8" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Workbench Surface -->
+  <rect width="800" height="500" fill="url(#bg-slate)"/>
+  <rect width="800" height="500" fill="url(#dot-grid)"/>
+  <ellipse cx="320" cy="250" rx="280" ry="180" fill="url(#glow-ice)"/>
+  <ellipse cx="520" cy="250" rx="220" ry="160" fill="url(#glow-olive)"/>
+
+  <!-- Precision Mat Perimeter -->
+  <rect x="36" y="32" width="728" height="436" rx="18" stroke="#DCF0F8" stroke-opacity="0.09" stroke-width="1"/>
+  <path d="M56 54 H72 M56 54 V70 M744 54 H728 M744 54 V70 M56 446 H72 M56 446 V430 M744 446 H728 M744 446 V430" stroke="#90A054" stroke-opacity="0.45" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Horizontal Pro Smartphone Architectural Frame -->
+  <g transform="translate(135, 118)">
+    <!-- Outer Titanium Chassis -->
+    <rect x="0" y="0" width="530" height="264" rx="44" fill="#152330" fill-opacity="0.72" stroke="#DCF0F8" stroke-opacity="0.65" stroke-width="1.5"/>
+    <!-- Inner Bezel -->
+    <rect x="10" y="10" width="510" height="244" rx="36" stroke="#DCF0F8" stroke-opacity="0.20" stroke-width="1"/>
+    <!-- Antenna Breaks -->
+    <line x1="74" y1="0" x2="74" y2="10" stroke="#90A054" stroke-opacity="0.7" stroke-width="1.5"/>
+    <line x1="456" y1="0" x2="456" y2="10" stroke="#90A054" stroke-opacity="0.7" stroke-width="1.5"/>
+    <line x1="74" y1="254" x2="74" y2="264" stroke="#90A054" stroke-opacity="0.7" stroke-width="1.5"/>
+    <line x1="456" y1="254" x2="456" y2="264" stroke="#90A054" stroke-opacity="0.7" stroke-width="1.5"/>
+
+    <!-- Triple-Lens Camera Array (Upper Left) -->
+    <rect x="28" y="26" width="112" height="112" rx="26" fill="#0F1A24" fill-opacity="0.65" stroke="#DCF0F8" stroke-opacity="0.38" stroke-width="1.2"/>
+    <circle cx="58" cy="56" r="18" stroke="#DCF0F8" stroke-opacity="0.65" stroke-width="1.2"/>
+    <circle cx="58" cy="56" r="10" stroke="#90A054" stroke-opacity="0.85" stroke-width="1.2"/>
+    <circle cx="58" cy="108" r="18" stroke="#DCF0F8" stroke-opacity="0.65" stroke-width="1.2"/>
+    <circle cx="58" cy="108" r="10" stroke="#DCF0F8" stroke-opacity="0.28" stroke-width="1"/>
+    <circle cx="108" cy="82" r="18" stroke="#DCF0F8" stroke-opacity="0.65" stroke-width="1.2"/>
+    <circle cx="108" cy="82" r="10" stroke="#DCF0F8" stroke-opacity="0.28" stroke-width="1"/>
+    <circle cx="108" cy="46" r="5" stroke="#DCF0F8" stroke-opacity="0.4" stroke-width="1"/>
+    <circle cx="108" cy="118" r="6" fill="#90A054" fill-opacity="0.25" stroke="#90A054" stroke-opacity="0.8" stroke-width="1"/>
+
+    <!-- Logic Board & Microelectronics Region -->
+    <rect x="28" y="152" width="112" height="84" rx="14" stroke="#DCF0F8" stroke-opacity="0.22" stroke-width="1" stroke-dasharray="4 4"/>
+    <rect x="48" y="170" width="44" height="44" rx="6" stroke="#DCF0F8" stroke-opacity="0.45" stroke-width="1.1"/>
+    <rect x="57" y="179" width="26" height="26" rx="3" stroke="#90A054" stroke-opacity="0.85" stroke-width="1.1"/>
+    <!-- IC pins -->
+    <path d="M56 164 v6 M66 164 v6 M76 164 v6 M84 164 v6 M56 214 v6 M66 214 v6 M76 214 v6 M84 214 v6" stroke="#DCF0F8" stroke-opacity="0.35" stroke-width="1"/>
+    <path d="M104 176 h20 M104 186 h20 M104 196 h16 M104 206 h22" stroke="#DCF0F8" stroke-opacity="0.28" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Internal L-Shaped Battery Cell Block -->
+    <path d="M164 34 H414 C423 34 430 41 430 50 V214 C430 223 423 230 414 230 H164 C155 230 148 223 148 214 V50 C148 41 155 34 164 34 Z" fill="#182838" fill-opacity="0.45" stroke="#DCF0F8" stroke-opacity="0.36" stroke-width="1.2"/>
+    <rect x="168" y="54" width="242" height="156" rx="12" stroke="#DCF0F8" stroke-opacity="0.14" stroke-width="1" stroke-dasharray="6 5"/>
+    <!-- MagSafe Inductive Coil Ring -->
+    <circle cx="289" cy="132" r="54" stroke="#DCF0F8" stroke-opacity="0.42" stroke-width="1.2"/>
+    <circle cx="289" cy="132" r="42" stroke="#90A054" stroke-opacity="0.72" stroke-width="1.2" stroke-dasharray="8 6"/>
+    <line x1="289" y1="192" x2="289" y2="212" stroke="#DCF0F8" stroke-opacity="0.42" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- USB-C Port & Flex Assembly (Right Edge) -->
+    <rect x="454" y="84" width="44" height="96" rx="12" stroke="#DCF0F8" stroke-opacity="0.32" stroke-width="1.1"/>
+    <rect x="464" y="108" width="24" height="48" rx="6" fill="#0F1A24" fill-opacity="0.65" stroke="#90A054" stroke-opacity="0.85" stroke-width="1.2"/>
+    <path d="M488 132 H520" stroke="#DCF0F8" stroke-opacity="0.55" stroke-width="1.2"/>
+    <path d="M430 132 H454" stroke="#90A054" stroke-opacity="0.7" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+    <!-- Olive Diagnostic Target Rings & Fine Leader Lines -->
+    <!-- Target 1: Camera Array -->
+    <circle cx="58" cy="56" r="24" stroke="#90A054" stroke-opacity="0.55" stroke-width="1"/>
+    <path d="M40 38 L8 -28 H-58" stroke="#90A054" stroke-opacity="0.55" stroke-width="1" stroke-dasharray="3 3"/>
+    <circle cx="-58" cy="-28" r="3" fill="#90A054"/>
+
+    <!-- Target 2: Battery / MagSafe -->
+    <circle cx="289" cy="132" r="14" stroke="#90A054" stroke-opacity="0.85" stroke-width="1.2"/>
+    <circle cx="289" cy="132" r="4" fill="#90A054"/>
+    <path d="M289 118 V-32 H346" stroke="#90A054" stroke-opacity="0.55" stroke-width="1" stroke-dasharray="3 3"/>
+    <circle cx="346" cy="-32" r="3" fill="#90A054"/>
+
+    <!-- Target 3: USB-C / Charging Flex -->
+    <circle cx="476" cy="132" r="28" stroke="#90A054" stroke-opacity="0.45" stroke-width="1" stroke-dasharray="4 4"/>
+    <path d="M476 160 L512 292 H566" stroke="#90A054" stroke-opacity="0.55" stroke-width="1" stroke-dasharray="3 3"/>
+    <circle cx="566" cy="292" r="3" fill="#90A054"/>
+  </g>
+</svg>
